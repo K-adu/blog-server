@@ -7,6 +7,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { SharedModule } from './shared/shared.module';
+import { BlogsModule } from './blogs/blogs.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { SharedModule } from './shared/shared.module';
       global: true,
       secret: 'hellothisissecret',
     }),
+    BlogsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
